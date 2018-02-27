@@ -1,6 +1,6 @@
 {
   "name": "datepicker-week-view",
-  "version": "1.1.3",
+  "version": "0.0.1",
   "homepage": "https://github.com/FranclisJunior/datepicker-week-view",
   "authors": [
     "Franclis Galdino <franclisgaldino@gmail.com>"
@@ -13,12 +13,15 @@
   "keywords": [
     "day",
     "date",
-    "horizontal scroll",
     "weekview",
     "week-view",
     "week view",
     "week",
-    "datepicker"
+    "datepicker",
+    "calendar",
+    "angular",
+    "angularJS",
+    "horizontal scroll"
   ],
   "license": "MIT",
   "ignore": [
