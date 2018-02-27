@@ -10,17 +10,17 @@ week view.
 **TODO**
 
 ## Installation
-#### Bower
+### Bower
 ````
 bower install datepicker-week-view
 ````
 
-#### Insert dependency in angular module
+### Insert dependency in angular module
 ````
 var app = angular.module("myApp", ["dtp-week-view"]);
 ````
 
-#### Includes files in index.html (if necessary)
+### Includes files in index.html (if necessary)
 
 **Include js file (after angular.js script tag):**
 ````
@@ -33,14 +33,14 @@ var app = angular.module("myApp", ["dtp-week-view"]);
 ````
 
 
-##Usage
+## Usage
 
 ````
 <dtp-week-view num-weeks="1" ng-model="appC.selectedDay"></dtp-week-view>
 ````
 
 
-##Options
+## Options
 | Option  | Default Value | Description|
 | ------------- | ------------- | ------------------------ |
 | num-weeks  | 1  | Number of weeks to be displayed  |
