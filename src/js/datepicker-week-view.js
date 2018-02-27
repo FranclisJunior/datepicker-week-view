@@ -45,7 +45,8 @@
             scope: {
                 numWeeks: '@?',
                 startDate: '=?',
-                minDate: '=?'
+                minDate: '=?',
+                model: '=ngModel'
             }
         };
         return directive;
@@ -74,33 +75,12 @@
             $scope.maxDays = $scope.numWeeks * DEFAULT_MAX_DAYS;
             $scope.minDate = $scope.minDate ? $scope.minDate : DEFAULT_MIN_DATE;
 
-            $scope.firstDay = $scope.startDate ? $scope.startDate : new Date();
+            $scope.selectedDay = angular.copy($scope.model);
+            $scope.firstDay = $scope.startDate ? $scope.startDate : $scope.selectedDay ? $scope.selectedDay : new Date();
             $scope.lastDay = moment($scope.firstDay).add($scope.maxDays - 1, 'days');
-            $scope.selectedDay = angular.copy($scope.firstDay);
-
-            $scope.month = moment($scope.firstDay).format('MMMM');
-            $scope.year = moment($scope.firstDay).format('YYYY');
 
             $scope.$watch('week-view', function () {
-                $scope.weeks = [];
-                var index = 0;
-                var dates = [];
-                do {
-                    var dateAux = moment($scope.firstDay).add(index, 'days');
-                    var date = {
-                        dayName: dateAux.format('ddd'),
-                        day: dateAux.format('D').length === 1 ? '0' + dateAux.format('D') : dateAux.format('D'),
-                        value: dateAux.toDate(),
-                        active: index === 0,
-                        disabled: dateAux.isBefore($scope.minDate)
-                    };
-                    dates.push(date);
-                    index++;
-                    if (index % 7 === 0) {
-                        $scope.weeks.push({dates: angular.copy(dates)});
-                        dates = [];
-                    }
-                } while (index < $scope.maxDays);
+                buildDates();
             });
 
             $scope.nextDays = function () {
@@ -128,8 +108,8 @@
                         dayName: dateAux.format('ddd'),
                         day: dateAux.format('D').length === 1 ? '0' + dateAux.format('D') : dateAux.format('D'),
                         value: dateAux.toDate(),
-                        active: dateAux.isSame(moment($scope.selectedDay)),
-                        disabled: dateAux.isBefore($scope.minDate)
+                        active: $scope.selectedDay && dateAux.isSame(moment($scope.selectedDay), 'day'),
+                        disabled: dateAux.isBefore(moment($scope.minDate), 'day')
                     };
                     dates.push(date);
                     index++;

@@ -13,7 +13,6 @@
 }
 
 #week-view ul {
-    border-bottom: 1px solid #e6e6e6;
     position: relative;
     white-space: nowrap;
     overflow-x: auto;

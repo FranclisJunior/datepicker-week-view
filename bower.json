@@ -1,6 +1,6 @@
 {
   "name": "datepicker-week-view",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/FranclisJunior/datepicker-week-view",
   "authors": [
     "Franclis Galdino <franclisgaldino@gmail.com>"
@@ -32,5 +32,8 @@
     "angular": "~1.4.9",
     "moment": "~2.10.6",
     "font-awesome": "~4.7.0"
+  },
+  "devDependencies": {
+    "datepicker-week-view": "^0.0.1"
   }
 }
