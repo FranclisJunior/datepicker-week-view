@@ -1,0 +1,48 @@
+{
+  "name": "datepicker-week-view",
+  "version": "0.0.2",
+  "homepage": "https://github.com/FranclisJunior/datepicker-week-view",
+  "authors": [
+    "Franclis Galdino <franclisgaldino@gmail.com>"
+  ],
+  "description": "",
+  "main": [
+    "src/js/datepicker-week-view.js",
+    "src/css/style.css"
+  ],
+  "keywords": [
+    "day",
+    "date",
+    "weekview",
+    "week-view",
+    "week view",
+    "week",
+    "datepicker",
+    "calendar",
+    "angular",
+    "angularJS",
+    "horizontal scroll"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.9",
+    "moment": "~2.10.6",
+    "font-awesome": "~4.7.0"
+  },
+  "devDependencies": {
+    "datepicker-week-view": "^0.0.1"
+  },
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.2",
+    "commit": "8bdeae04cb58950c5e0c4772a1c1156c239757c6"
+  },
+  "_source": "https://github.com/FranclisJunior/datepicker-week-view.git",
+  "_target": "^0.0.2",
+  "_originalSource": "datepicker-week-view"
+}

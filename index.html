@@ -1,0 +1,41 @@
+<!doctype HTML>
+<html data-ng-app="sample">
+<head>
+    <meta charset="utf-8">
+    <title>DatePicker Week View</title>
+    <link rel="stylesheet" href="bower_components/datepicker-week-view/src/css/style.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+
+<div ng-controller="AppController as appC">
+    <h1 class="center">One Week View</h1>
+    <dtp-week-view num-weeks="1" min-date="appC.minDate" ng-model="appC.selectedDay1"></dtp-week-view>
+    <h3 class="center" ng-if="appC.selectedDay1">Selected Day: {{appC.selectedDay1 | date: 'yyyy-MM-dd'}}</h3>
+    <hr>
+
+    <h1 class="center">Two Week View</h1>
+    <dtp-week-view num-weeks="2" min-date="appC.minDate" ng-model="appC.selectedDay2"></dtp-week-view>
+    <h3 class="center" ng-if="appC.selectedDay3">Selected Day: {{appC.selectedDay2 | date: 'yyyy-MM-dd'}}</h3>
+    <hr>
+
+    <h1 class="center">Three Week View</h1>
+    <dtp-week-view num-weeks="3" min-date="appC.minDate" ng-model="appC.selectedDay3"></dtp-week-view>
+    <h3 class="center" ng-if="appC.selectedDay3">Selected Day: {{appC.selectedDay3 | date: 'yyyy-MM-dd'}}</h3>
+    <hr>
+
+    <h1 class="center">Four Week View</h1>
+    <dtp-week-view num-weeks="4" ng-model="appC.selectedDay4"></dtp-week-view>
+    <h3 class="center" ng-if="appC.selectedDay4">Selected Day: {{appC.selectedDay4 | date: 'yyyy-MM-dd'}}</h3>
+</div>
+
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/datepicker-week-view/src/js/datepicker-week-view.js"></script>
+
+<script src="app.module.js"></script>
+<script src="app.controller.js"></script>
+
+</body>
+</html>
