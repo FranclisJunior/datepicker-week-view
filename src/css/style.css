@@ -1,0 +1,110 @@
+#week-view .badge {
+    display: inline-block;
+    margin: 3px;
+    text-transform: uppercase;
+    background: #ddd;
+    color: #777;
+    font-size: 0.663em;
+    padding: 2px 6px;
+}
+
+#week-view .badge.big {
+    font-size: 1.25rem;
+}
+
+#week-view ul {
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    margin: 0;
+    padding: 0;
+}
+
+.center,
+.center h1,
+.center h2,
+.center h3,
+.center h4,
+.center h5,
+.center img,
+.center p {
+    text-align: center;
+}
+
+#week-view .btn.border-out {
+    border: 0;
+}
+
+#week-view .btn:hover::before {
+    background: none !important;
+}
+
+#week-view .week-container {
+    display: inline-block;
+}
+
+#week-view .week {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+
+#week-view .prev i,
+#week-view .next i {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+#week-view ul li {
+    display: inline-block;
+    margin: 0;
+    border-bottom: 2px solid transparent;
+    padding: 8px 5px;
+}
+
+#week-view ul li .badge {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+#week-view ul li a {
+    color: #424242;
+    cursor: pointer;
+}
+
+#week-view ul li.active {
+    border-color: #37b5aa;
+}
+
+#week-view .text-capitalize {
+    text-transform: capitalize;
+}
+
+#week-view .isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+#week-view .btn {
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#week-view .month-year {
+    margin: 5px 0;
+}
