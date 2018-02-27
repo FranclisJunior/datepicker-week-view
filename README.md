@@ -7,7 +7,7 @@
 week view.
 
 ## Demo
-**TODO**
+**https://franclisjunior.github.io/datepicker-week-view**
 
 ## Installation
 ### Bower
