@@ -46,7 +46,7 @@ var app = angular.module("myApp", ["dtp-week-view"]);
 | num-weeks  | 1  | Number of weeks to be displayed  |
 | start-date  | now  | Date that will get selected   |
 | min-date  | 2000-01-01  | Lowest possible date to be selected (previous dates will be disabled)   |
-| max-date  | 3000-01-01  | Highest possible date to be selected (previous dates will be disabled)  |
+| max-date  | 3000-01-01  | Highest possible date to be selected (next dates will be disabled)  |
 | invalid-dates  | []  | Array of values that are disabled. It use moment format "YYYY-MM-DD"       |
 
 ## Dependencies
