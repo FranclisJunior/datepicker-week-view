@@ -5,7 +5,9 @@
         .constant('moment', moment)
         .constant('DEFAULT_NUM_WEEKS', 1)
         .constant('DEFAULT_MAX_DAYS', 7)
-        .constant('DEFAULT_MIN_DATE', new Date(2000, 0, 1));
+        .constant('DEFAULT_MIN_DATE', new Date(2000, 0, 1))
+        .constant('DEFAULT_MAX_DATE', new Date(3000, 0, 1))
+        .constant('DEFAULT_INVALID_DATES', []);
 
     angular.module('dtp-week-view')
         .directive('dtpWeekView', dtpWeekView);
@@ -46,6 +48,8 @@
                 numWeeks: '@?',
                 startDate: '=?',
                 minDate: '=?',
+                maxDate: '=?',
+                invalidDates: '=?',
                 model: '=ngModel'
             }
         };
@@ -70,10 +74,12 @@
             };
         }
 
-        function WeekViewController($scope, DEFAULT_NUM_WEEKS, DEFAULT_MAX_DAYS, DEFAULT_MIN_DATE) {
+        function WeekViewController($scope, DEFAULT_NUM_WEEKS, DEFAULT_MAX_DAYS, DEFAULT_MIN_DATE, DEFAULT_MAX_DATE, DEFAULT_INVALID_DATES) {
             $scope.numWeeks = $scope.numWeeks ? $scope.numWeeks : DEFAULT_NUM_WEEKS;
             $scope.maxDays = $scope.numWeeks * DEFAULT_MAX_DAYS;
             $scope.minDate = $scope.minDate ? $scope.minDate : DEFAULT_MIN_DATE;
+            $scope.maxDate = $scope.maxDate ? $scope.maxDate : DEFAULT_MAX_DATE;
+            $scope.invalidDates = $scope.invalidDates ? $scope.invalidDates : DEFAULT_INVALID_DATES;
 
             $scope.selectedDay = angular.copy($scope.model);
             $scope.firstDay = $scope.startDate ? $scope.startDate : $scope.selectedDay ? $scope.selectedDay : new Date();
@@ -109,7 +115,9 @@
                         day: dateAux.format('D').length === 1 ? '0' + dateAux.format('D') : dateAux.format('D'),
                         value: dateAux.toDate(),
                         active: $scope.selectedDay && dateAux.isSame(moment($scope.selectedDay), 'day'),
-                        disabled: dateAux.isBefore(moment($scope.minDate), 'day')
+                        disabled: dateAux.isBefore(moment($scope.minDate), 'day') || 
+                            dateAux.isAfter(moment($scope.maxDate)) || 
+                            $scope.invalidDates.indexOf(dateAux.format("YYYY-MM-DD")) !== -1
                     };
                     dates.push(date);
                     index++;
